@@ -1,20 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/js.js" defer></script>
     <title>Document</title>
 </head>
+
 <body>
-    <header>
-        <nav></nav>
-        <section>
-             <!--Imagen de cabecera--> 
-        </section>
+    <header class="header">
+        <img class="header__logo" src="./asstes/logo.svg" alt="">
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <li class="header__li"></li><a href="" class="header__a">Novedades</a>
+                <li class="header__li"></li><a href="" class="header__a">Peliculas</a>
+                <li class="header__li"></li><a href="" class="header__a">Series</a>
+        </nav>
+
         <!-- Seccion Adrian -->
     </header>
 
-    <section>
+    <section class="ranking carrousel">
+        <!-- <div class="card-container trailer " id="trailer">
+            <div class="card__ranking">1</div>
+            <div class="card__img">
+                <img class="card__poster" src="./asstes/IPE6SU4W5VBJNKZ3ZWKPMSEIF4.avif" alt="">
+                <div class="card__trailer" id="cardTrailer">
+                    <iframe class="card__iframe" width="560" height="315" src="https://www.youtube.com/embed/ulWAuhkwsRc?autoplay=1&mute=1&loop=1&controls=0" title="YouTube video player" frameborder="0" allow="autoplay; fullscreen; loop" allowfullscreen data-item="1"></iframe> 
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container trailer ">
+            <div class="card__ranking" >2</div>
+            <div class="card__img">
+                <img class="card__poster" src="./asstes/IPE6SU4W5VBJNKZ3ZWKPMSEIF4.avif" alt="">
+                <div class="card__trailer">
+                    <iframe class="card__iframe" width="560" height="315" src="https://www.youtube.com/embed/ulWAuhkwsRc?autoplay=1&mute=1&loop=1&controls=0" title="YouTube video player" frameborder="0" allow="autoplay; fullscreen; loop" allowfullscreen data-item="2"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container trailer ">
+            <div class="card__ranking">3</div>
+            <div class="card__img">
+                <img class="card__poster" src="./asstes/IPE6SU4W5VBJNKZ3ZWKPMSEIF4.avif" alt="">
+                <div class="card__trailer">
+                    <iframe class="card__iframe" width="560" height="315" src="https://www.youtube.com/embed/ulWAuhkwsRc?autoplay=1&mute=1&loop=1&controls=0" title="YouTube video player" frameborder="0" allow="autoplay; fullscreen; loop" allowfullscreen data-item="3"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container trailer ">
+            <div class="card__ranking">4</div>
+            <div class="card__img">
+                <img class="card__poster" src="./asstes/IPE6SU4W5VBJNKZ3ZWKPMSEIF4.avif" alt="">
+                <div class="card__trailer">
+                    <iframe class="card__iframe" width="560" height="315" src="https://www.youtube.com/embed/ulWAuhkwsRc?autoplay=1&mute=1&loop=1&controls=0" title="YouTube video player" frameborder="0" allow="autoplay; fullscreen; loop" allowfullscreen data-item="4"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container trailer ">
+            <div class="card__ranking">5</div>
+            <div class="card__img">
+                <img class="card__poster" src="./asstes/IPE6SU4W5VBJNKZ3ZWKPMSEIF4.avif" alt="">
+                <div class="card__trailer">
+                    <iframe class="card__iframe" width="560" height="315" src="https://www.youtube.com/embed/ulWAuhkwsRc?autoplay=1&mute=1&loop=1&controls=0" title="YouTube video player" frameborder="0" allow="autoplay; fullscreen; loop" allowfullscreen data-item="5"></iframe>
+                </div>
+            </div>
+        </div> -->
+        <div class="grande" id="contenedor">
+            <div class="carr__img">
+                <img src="./asstes/IPE6SU4W5VBJNKZ3ZWKPMSEIF4.avif" alt="img 1" class="img">
+                <div class="carr__trailer">
+                    <iframe class="carr__iframe" width="560" height="315" src="https://www.youtube.com/embed/ulWAuhkwsRc?autoplay=1&mute=1&loop=1&controls=0" title="YouTube video player" frameborder="0" allow="autoplay; fullscreen; loop" allowfullscreen data-item="5"></iframe>
+                </div>
+            </div>
+            <div class="carr__img">
+                <img src="./asstes/IPE6SU4W5VBJNKZ3ZWKPMSEIF4.avif" alt="img 2" class="img">
+                <div class="carr__trailer">
+                    <iframe class="carr__iframe" width="560" height="315" src="https://www.youtube.com/embed/ulWAuhkwsRc?autoplay=1&mute=1&loop=1&controls=0" title="YouTube video player" frameborder="0" allow="autoplay; fullscreen; loop" allowfullscreen data-item="5"></iframe>
+                </div>
+            </div>
+            <div class="carr__img">
+                <img src="./asstes/IPE6SU4W5VBJNKZ3ZWKPMSEIF4.avif" alt="img 3" class="img">
+                <div class="carr__trailer">
+                    <iframe class="carr__iframe" width="560" height="315" src="https://www.youtube.com/embed/ulWAuhkwsRc?autoplay=1&mute=1&loop=1&controls=0" title="YouTube video player" frameborder="0" allow="autoplay; fullscreen; loop" allowfullscreen data-item="5"></iframe>
+                </div>
+            </div>
+            <div class="carr__img">
+                <img src="./asstes/IPE6SU4W5VBJNKZ3ZWKPMSEIF4.avif" alt="img 4" class="img">
+                <div class="carr__trailer">
+                    <iframe class="carr__iframe" width="560" height="315" src="https://www.youtube.com/embed/ulWAuhkwsRc?autoplay=1&mute=1&loop=1&controls=0" title="YouTube video player" frameborder="0" allow="autoplay; fullscreen; loop" allowfullscreen data-item="5"></iframe>
+                </div>
+            </div>
+            <div class="carr__img">
+                <img src="./asstes/IPE6SU4W5VBJNKZ3ZWKPMSEIF4.avif" alt="img 5" class="img">
+                <div class="carr__trailer">
+                    <iframe class="carr__iframe" width="560" height="315" src="https://www.youtube.com/embed/ulWAuhkwsRc?autoplay=1&mute=1&loop=1&controls=0" title="YouTube video player" frameborder="0" allow="autoplay; fullscreen; loop" allowfullscreen data-item="5"></iframe>
+                </div>
+            </div>
+            <div class="carr__img">
+                <img src="./asstes/IPE6SU4W5VBJNKZ3ZWKPMSEIF4.avif" alt="img 6" class="img">
+                <div class="carr__trailer">
+                    <iframe class="carr__iframe" width="560" height="315" src="https://www.youtube.com/embed/ulWAuhkwsRc?autoplay=1&mute=1&loop=1&controls=0" title="YouTube video player" frameborder="0" allow="autoplay; fullscreen; loop" allowfullscreen data-item="5"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <ul class="news__puntos" id="accion">
+            <li class="news__punto news__punto--active" id="punto" data-item="0"></li>
+            <li class="news__punto" id="punto" data-item="1"></li>
+            <li class="news__punto" id="punto" data-item="2"></li>
+            <li class="news__punto" id="punto" data-item="3"></li>
+        </ul>
+
+
         <!-- Seccion Novedades Alejandro -->
     </section>
 
@@ -33,6 +138,7 @@
     <footer>
         <!-- Seccion Footer Alejandro-->
     </footer>
-    
+
 </body>
+
 </html>
