@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* ----- section movies ------  */
+.section-movies {
+    background-color: rgb(46, 46, 46);
+    width: 1fr;
+    height: auto;
+}
+
+.header-movies {
+    text-align: center;
+}
+
+.header-movies p {
+    font-family: 'Poppins', sans-serif;
+    color: #ccc;
+    font-size: 20px;
+    margin: 20px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.header-movies h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    font-weight: bolder;
+    text-shadow: 5px 4px 3px rgb(103, 66, 163);
+    margin: 5px;
+    margin-top: 0;
+}
+
+.nav-movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-movies li {
+    list-style: none;
+}
+
+.nav-btn-movies {
+    padding: 0.1em 0.25em;
+    width: auto;
+    height: 4.2em;
+    background-color: #212121;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+}
+
+.nav-btn-movies button {
+    border: none;
+    cursor: pointer;
+}
+
+.nav-btn-movies span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #212121;
+    border-radius: 0.2em;
+    font-size: 1.4em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em rgb(81, 33, 158);
+    ;
+}
+
+.nav-btn-movies:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.nav-btn-movies:not(hover) {
+    transition: all 1s;
+}
+
+.movie-card {
+    margin: 2px;
+    display: inline-block;
+    width: 15rem;
+    height: 22rem;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card:hover {
+    cursor: pointer;
+}
+
+.movie-overlay {
+    background: rgba(0, 0, 0, 0.788);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+
+.movie-card:hover .movie-overlay {
+    opacity: 1;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    margin: auto;
+    transition: all ease-in-out 0.5s;
+}
+
+.movie-card:hover img {
+    transform: scale(1.1);
+    filter: blur(2px);
+}
+
+.card-content {
+    text-align: center;
+    color: white;
+    text-shadow: 10px 4px 10px rgb(81, 33, 158);
+    z-index: 4;
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+
+.card-content p {
+    font-size: 16px;
+    color: #ccc;
+    padding: 2px;
+}
+
+.card-content button {
+    font-family: monospace;
+    font-size: 1rem;
+    color: rgb(186, 143, 255);
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(202, 172, 255);
+    background: #252525;
+    box-shadow: 3px 3px rgb(81, 33, 158);
+    cursor: pointer;
+    margin: 35px 0;
+}
+
+.card-content button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+
+.movie-card:hover .card-content {
+    top: 30%;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 500px) {
+    .movie-card {
+        width: 70%;
+        height: 70%;
+    }
+}

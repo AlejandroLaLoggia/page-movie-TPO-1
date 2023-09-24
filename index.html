@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- -----link fonts google -----  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;1,100;1,200;1,500&display=swap"
+        rel="stylesheet">
+    <!-- -----link icon bootstrap -----  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -22,6 +30,37 @@
 
     <section>
         <!-- Seccion Movies Daniela -->
+        <div class="section-movies">
+            <div class="header-movies">
+                <p class="subtitle-movies">Top Online</p>
+                <h2 class="title-movies">Peliculas Recomendadas</h2>
+                <ul class="nav-movies">
+                    <li><button class="nav-btn-movies"><span class="nav-span-movies">Drama</span></button></li>
+                    <li><button class="nav-btn-movies"><span class="nav-span-movies">Comedia</span></button></li>
+                    <li><button class="nav-btn-movies"><span class="nav-span-movies">Ciencia Ficcion</span></button>
+                    </li>
+                    <li><button class="nav-btn-movies"><span class="nav-span-movies">Terror</span></button></li>
+                </ul>
+            </div>
+            <div class="body-movies">
+                <ul id="movie-list"></ul>
+            </div>
+            <div class="pages-movies">
+                <!-- aqui menu navegacion de paginas -->
+                <a class="tab" href="#" data-text="Home">
+                    <span class="icon">A</span>
+                </a>
+                <a class="tab" href="#" data-text="Like">
+                    <span class="icon">B</span>
+                </a>
+                <a class="tab" href="#" data-text="Extra">
+                    <span class="icon">C</span>
+                </a>
+                <a class="tab" href="#" data-text='Extra'>
+                    <span class="icon">D</span>
+                </a>
+            </div>
+        </div>
     </section>
 
     <section>
@@ -36,6 +75,8 @@
         <!-- Seccion Footer Alejandro-->
     </footer>
 
+
+    <script src="js/js.js"></script>
 </body>
 
 </html>
