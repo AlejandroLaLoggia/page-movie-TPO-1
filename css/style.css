@@ -1,9 +1,13 @@
 :root{
     --clr_bkg: rgb(21, 2, 36);
     --clr_gradiente: rgb(21, 2, 36),rgb(40, 2, 70);
+    --clr_blanco: rgb(255, 255, 255);
 
     --brd_rad:16px;
     --brd_btn: 50%;
+
+    --ff-body: 'DM Serif Display', serif;
+    --ff-title: 'Poppins', sans-serif;
 }
 
 body{
@@ -13,6 +17,10 @@ body{
     background-color: var(--clr_bkg);
     max-width: 1300px;
     margin: auto;
+
+    font-family: var(--ff-body);
+    color: var(--clr_blanco);
+     
 }
 
 
@@ -48,7 +56,7 @@ body{
 
 /*--------------------------------------*/
 
-/* .ranking{
+.ranking{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(220px), 1fr));
     margin: auto;
@@ -107,17 +115,19 @@ body{
     height: 150px;
     transform: scale(1.2);
     z-index: 1;
-}*/
+}
 
 /*--------------------------------------------------------------------------*/
 
-.carrousel{
+ .carrousel{
     width: 90%;
     margin: auto;
     padding: 2rem;
     overflow: hidden;
     border-radius: var(--brd_rad);
     background-color: rgb(38, 1, 67);
+    position: relative;
+   
 }
 .grande{
     display: flex;
@@ -147,8 +157,9 @@ body{
     position: absolute;
     top: 0;
     left: 0;
+    
     width: 100%;
-    height: 250px;
+    height: 18vw;
     opacity: 0;
     transition: opacity 1s;
     
@@ -159,6 +170,7 @@ body{
 .carr__img:hover{
     transform: scale(1.2);
     z-index: 1;
+    overflow: initial;
    
 }
 
@@ -189,4 +201,205 @@ body{
 
 .news__punto--active{
     background-color: rgb(205, 25, 25);
+}  
+
+/*--------------------------Carrosule--------------------------------*/
+
+.carrousel-2{
+    position: relative;
+    
+}
+
+.carrousel-2__h3{
+   text-align: center;
+}
+
+.wrapper{
+    width: 90%;
+    margin: 50px auto;
+    
+    overflow: hidden;
+}
+
+.grande-2{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: auto;
+    gap: 16px;
+    
+    align-items: center;
+    justify-content: center;
+    
+    width: 200%;
+    padding: 0 8px;
+    transition: transform 1s ease;
+}
+
+.img-2{
+    display: block;
+    
+}
+
+.lgt{
+    display: none;
+}
+
+
+.lgt-isActive{
+    display: block;
+    position: absolute;
+    top: 0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.lgt__close{
+    position: absolute;
+    top: 0;
+    right: 50px;
+
+    width: 50px;
+    height: 50px;
+    
+    color: var(--clr_blanco);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.lgt__iframe{
+    position: absolute;
+    top:0;
+    left: calc(50vw - 35vw);
+
+    width: 100%;
+    height: 100%; 
+}
+
+
+.lgt__iframe-2{
+    width: 70vw;
+    height: 70vh;
+    max-width: 900px;
+}
+
+
+.flecha{
+    position: absolute;
+    top: calc(50% - 4vw/2);
+    
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    
+    color: var(--clr_blanco);
+    
+    
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flecha__izq{
+    left: 10px;
+}
+
+.flecha__der{
+    right: 10px;
+}
+
+
+
+
+
+/*---------------FOOTER---------------------*/
+
+.ftrSup,
+.ftrInf{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    color: var(--clr_blanco);
+}
+
+.ftrDiv{
+    width: 60%;
+    height: 3px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid gray;
+    margin: 50px auto;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.75);
+}
+
+.ftrSup__logo{
+    
+    display: block;
+}
+
+
+.ftrSup__secciones,
+.ftrInf__terms,
+.ftrInf__redes{
+  
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.ftrSup__li,
+.ftrInf__term,
+.ftrInf__red{
+padding: 15px 10px;
+}
+
+
+.ftrInf{
+  margin-bottom: 50px;
+}
+
+
+.ftrInf__icon{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/*-------------------MEDIA QUERIES----------------*/
+@media (max-width: 720px){
+    .grande-2{
+        width: 250%;
+    }
+}
+
+@media (max-width: 650px){
+    .ftrSup,
+    .ftrInf{
+        flex-flow: column nowrap;
+    }
+}
+
+@media (max-width: 500px){
+    .grande-2{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+   
+
+}
+
+@media (max-width: 450px){
+    
+    .ftrSup,
+    .ftrInf__terms,
+    .ftrSup__secciones{
+        flex-direction: column;
+        align-items: center;
+    }
 }
