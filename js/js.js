@@ -1,68 +1,84 @@
 const apiKey = 'aaa3eef4';
 
-const movieNames = [
-    { name: 'Transformers: Rise of the Beasts', year: 2023 },
-    { name: 'Blue Beetle', year: 2023 },
-    { name: 'Megalodon: The Frenzy', year: 2023 },
-    { name: 'Jung_E', year: 2023 },
-    // { name: 'The Super Mario Bros. Movie', year: 2023 }
+const nombresPeliculas = [
+    { nombre: 'Transformers: Rise of the Beasts', anno: 2023 },
+    { nombre: 'Blue Beetle', anno: 2023 },
+    { nombre: 'Megalodon: The Frenzy', anno: 2023 },
+    { nombre: 'Jung_E', anno: 2023 },
+    // { nombre: 'The Super Mario Bros. Movie', anno: 2023 }
 ];
 
-async function searchMovies() {
-    const movieList = document.getElementById('movie-list');
-    const verButton = document.createElement('button');
-    verButton.textContent = 'Ver';
+const nombresSeries = [
+    { nombre: 'Breaking Bad' },
+    { nombre: 'Game of Thrones' },
+    { nombre: 'Stranger Things' },
+    { nombre: 'Dark'},
+    { nombre: 'The Simpsons'},
+    { nombre: 'Halo'},
+    { nombre: 'Sex Education'},
+    { nombre: 'Loki'},
+    { nombre: 'Hawkeye'},
+    { nombre: 'Chernobyl'},    
+];
 
-    for (const movieData of movieNames) {
-        const url = `https://www.omdbapi.com/?s=${movieData.name}&y=${movieData.year}&apikey=${apiKey}`;
+async function buscarUltimoPoster(nombre, anno, esPelicula) {
+    const url = `https://www.omdbapi.com/?t=${nombre}&y=${anno}&type=${esPelicula ? 'movie' : 'series'}&apikey=${apiKey}`;
 
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
+    try {
+        const respuesta = await fetch(url);
+        const datos = await respuesta.json();
 
-            if (data.Search) {
-                data.Search.forEach(async movie => {
-                    const movieCard = document.createElement('div');
-                    movieCard.className = 'movie-card';
+        if (datos.Poster) {
+            const tarjeta = document.createElement('div');
+            tarjeta.className = esPelicula ? 'movie-card' : 'series-card';
 
-                    const movieWrapper = document.createElement('div');
-                    movieWrapper.className = 'movie-overlay';
+            const superposicion = document.createElement('div');
+            superposicion.className = esPelicula ? 'movie-overlay' : 'series-overlay';
 
-                    const moviePoster = document.createElement('img');
-                    moviePoster.src = movie.Poster;
+            const poster = document.createElement('img');
+            poster.src = datos.Poster;
 
-                    const cardContent = document.createElement('div');
-                    cardContent.className = 'card-content';
+            const contenidoTarjeta = document.createElement('div');
+            contenidoTarjeta.className = 'card-content';
 
-                    const movieTitle = document.createElement('h3');
-                    movieTitle.textContent = movie.Title;
+            const titulo = document.createElement('h3');
+            titulo.textContent = datos.Title;
 
-                    const movieDescription = document.createElement('p');
-                    const movieVer = verButton.cloneNode(true);
+            const descripcion = document.createElement('p');
+            const botonVer = document.createElement('button');
+            botonVer.textContent = 'Ver';
 
-                    const detailUrl = `https://www.omdbapi.com/?i=${movie.imdbID}&apikey=${apiKey}`;
-                    const detailResponse = await fetch(detailUrl);
-                    const detailData = await detailResponse.json();
+            descripcion.textContent = datos.Plot;
 
-                    movieDescription.textContent = detailData.Plot;
+            contenidoTarjeta.appendChild(titulo);
+            contenidoTarjeta.appendChild(descripcion);
+            contenidoTarjeta.appendChild(botonVer);
 
-                    cardContent.appendChild(movieTitle);
-                    cardContent.appendChild(movieDescription);
-                    cardContent.appendChild(movieVer);
+            tarjeta.appendChild(superposicion);
+            tarjeta.appendChild(poster);
+            tarjeta.appendChild(contenidoTarjeta);
 
-                    movieCard.appendChild(movieWrapper);
-                    movieCard.appendChild(moviePoster);
-                    movieCard.appendChild(cardContent);
+            return tarjeta;
+        } else {
+            console.error(`No se encontró un póster para: ${nombre}`);
+        }
+    } catch (error) {
+        console.error(`Hubo un error al obtener los datos de la API para: ${nombre}`, error);
+    }
+}
 
-                    movieList.appendChild(movieCard);
-                });
-            } else {
-                console.error(`No se encontraron películas para: ${movieData.name} en el año ${movieData.year}`);
-            }
-        } catch (error) {
-            console.error(`Hubo un error al obtener los datos de la API para: ${movieData.name} en el año ${movieData.year}`, error);
+async function mostrarUltimosPosters(listaItems, esPelicula, idLista) {
+    const lista = document.getElementById(idLista);
+
+    for (const datosItem of listaItems) {
+        const tarjetaItem = await buscarUltimoPoster(datosItem.nombre, datosItem.anno, esPelicula);
+        if (tarjetaItem) {
+            lista.appendChild(tarjetaItem);
         }
     }
 }
 
-window.addEventListener('load', searchMovies);
+window.addEventListener('load', () => {
+    mostrarUltimosPosters(nombresPeliculas, true, 'movie-list');
+    mostrarUltimosPosters(nombresSeries, false, 'series-list');
+});
