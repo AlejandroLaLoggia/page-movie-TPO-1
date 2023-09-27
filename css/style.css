@@ -8,6 +8,10 @@ body {
     background-color: rgb(46, 46, 46);
     width: 1fr;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
 .header-movies {
@@ -85,7 +89,10 @@ body {
 .nav-btn-movies:not(hover) {
     transition: all 1s;
 }
-
+.body-movies{
+    display: flex;
+    justify-content: center;
+}
 .movie-card {
     margin: 2px;
     display: inline-block;
@@ -157,7 +164,7 @@ body {
     background: #252525;
     box-shadow: 3px 3px rgb(81, 33, 158);
     cursor: pointer;
-    margin: 35px 0;
+    margin: 1px 0;
 }
 
 .card-content button:active {
@@ -166,7 +173,7 @@ body {
 }
 
 .movie-card:hover .card-content {
-    top: 30%;
+    top: 18%;
     opacity: 1;
 }
 
