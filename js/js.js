@@ -16,6 +16,7 @@ const IMGLIST = document.querySelectorAll(".img-2");
 const IFRAME = document.querySelector(".lgt__iframe");
 let contador = 0;
 
+//direcciones de los trailers
 const TRAILER = {
     0: "_XMw8rjM9YM",
     1: "jzQn0-WH4WM",
@@ -52,25 +53,18 @@ window.addEventListener("mouseover", alerta);*/
 //  CONTENEDOR.style.transform=`translatex(${posicion[movimiento]}%)`;
 //  })
 
-
-
-
-
 function cerrar() {
-
     IFRAME.innerHTML ="";
     LGT.classList.remove("lgt-isActive");
 }
 
-function openlgt() {
-
-    LGT.classList.add("lgt-isActive");
-}
+let openlgt = () => LGT.classList.add("lgt-isActive");
 
 function mover(e) {
     let width = window.innerWidth;
     let id = e.target.getAttribute("id");
     let cards = 5;
+    let ancho = 10 * contador;
 
     if (width <= 720) cards = 4;
 
@@ -82,22 +76,14 @@ function mover(e) {
 
     if (contador < 0 || contador > (10 - cards)) contador = 0;
 
-    let ancho = 10 * contador;
-
     CARRUSEL.style.transform = `translatex(-${ancho}%)`;
-
-
 }
 
 
-
-PREV.addEventListener("click", mover);
-NEXT.addEventListener("click", mover);
-
-
+// Crea el evento click en las imagenes para abrir el IFRAME
 IMGLIST.forEach((elemento, i) => {
     
-    if(window.innerWidth<=500) return;
+    // if(window.innerWidth<=500) return;    //Esta linea evita que se abran los videos en resoluciones menor a 500px
 
     IMGLIST[i].addEventListener("click", () => {
         LGT.classList.add("lgt-isActive");
@@ -106,5 +92,7 @@ IMGLIST.forEach((elemento, i) => {
 })
 
 
+PREV.addEventListener("click", mover);
+NEXT.addEventListener("click", mover);
 CLOSE.addEventListener("click", cerrar);
 
