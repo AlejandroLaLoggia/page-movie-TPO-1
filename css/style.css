@@ -3,7 +3,7 @@
     --clr_gradiente: rgb(21, 2, 36), rgb(40, 2, 70);
     --clr_blanco: rgb(255, 255, 255);
 
-    --brd_rad: 16px;
+    --brd_rad: 0.3em;
     --brd_btn: 50%;
 
     --ff-body: 'DM Serif Display', serif;
@@ -23,6 +23,11 @@ body {
 
 }
 
+h2, h3{
+    color: #a3a3a3;
+    text-shadow: 5px 4px 3px rgb(103, 66, 163);
+}
+
 
 
 .header {
@@ -36,8 +41,10 @@ body {
     margin: auto;
 }
 
-.header__logo {
-    filter: drop-shadow(0 0 .75px rgb(217, 250, 29));
+.header__logo,
+.ftrSup__logo {
+    width: 100px;
+    height: 55px;
     padding-left: 20px;
 }
 
@@ -215,6 +222,8 @@ body {
 }
 
 .carrousel-2__h3 {
+    font-size: 35px;
+    font-weight: bolder;
     text-align: center;
 }
 
@@ -290,21 +299,33 @@ body {
 }
 
 
+
+/*--------------------------BOTONES---------------------*/
+
+.nav-btn-movies {
+    position: absolute;
+    top: 50%;
+
+    width: 100%;
+    height: 4vw;
+}
+
 .flecha {
     position: absolute;
-    top: calc(50% - 4vw/2);
-
     width: 4vw;
     height: 4vw;
-    border-radius: 50%;
-
-    color: var(--clr_blanco);
-
+    color: #a3a3a3;
 
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    background-color: #212121;
+    border: 0.08em solid #494949;
+    box-shadow: 0 0.4em 0.1em 0.010em rgb(54, 31, 92);
+    
+    border-radius: var(--brd_rad);
 }
 
 .flecha__izq {
@@ -315,7 +336,12 @@ body {
     right: 10px;
 }
 
-
+.flecha__izq:hover,
+.flecha__der:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #c0bfbf;
+}
 
 
 
@@ -338,11 +364,6 @@ body {
     border-bottom: 1px solid gray;
     margin: 50px auto;
     box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.75);
-}
-
-.ftrSup__logo {
-
-    display: block;
 }
 
 
