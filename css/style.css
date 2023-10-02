@@ -15,7 +15,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: var(--clr_bkg);
-    max-width: 1300px;
+    max-width: 1200px;
     margin: auto;
 
     font-family: var(--ff-body);
@@ -64,156 +64,6 @@ h2, h3{
     padding: 0 20px;
 }
 
-/*--------------------------------------*/
-
-.ranking {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(220px), 1fr));
-    margin: auto;
-}
-
-
-
-.card-container {
-    display: grid;
-    grid-template-columns: 1fr 70%;
-    position: relative;
-
-
-    margin: 50px auto;
-    width: 220px;
-    height: 86px;
-    border-radius: var(--brd_rad);
-    overflow: hidden;
-
-    background: linear-gradient(to top, var(--clr_gradiente));
-    box-shadow: 0px 0px 10px 0px rgba(105, 217, 197, 0.75);
-    transition: transform .5s;
-}
-
-.card__ranking {
-    font-size: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: azure;
-    transform: rotate(10deg);
-}
-
-.card__poster {
-    width: 100%;
-    display: block;
-    pointer-events: none;
-}
-
-.card__iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    opacity: 0;
-    transition: opacity .5s;
-}
-
-
-.card__trailer:hover .card__iframe {
-    opacity: 1;
-}
-
-.card-container:hover {
-    height: 150px;
-    transform: scale(1.2);
-    z-index: 1;
-}
-
-/*--------------------------------------------------------------------------*/
-
-.carrousel {
-    width: 90%;
-    margin: auto;
-    padding: 2rem;
-    overflow: hidden;
-    border-radius: var(--brd_rad);
-    background-color: rgb(38, 1, 67);
-    position: relative;
-
-}
-
-.grande {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: flex-start;
-    justify-content: space-around;
-
-    width: 200%;
-
-    transition: transform 1s ease;
-    transform: translateX(0);
-}
-
-.carr__img {
-    position: relative;
-    width: calc((100% / 6) - 4rem);
-    transition: transform .5s ease;
-    overflow: hidden;
-}
-
-.img {
-    display: block;
-    pointer-events: none;
-}
-
-.carr__iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 18vw;
-    opacity: 0;
-    transition: opacity 1s;
-
-}
-
-
-
-.carr__img:hover {
-    transform: scale(1.2);
-    z-index: 1;
-    overflow: initial;
-
-}
-
-.carr__img:hover .carr__iframe {
-    opacity: 1;
-}
-
-
-.news__puntos {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    padding: 1rem;
-}
-
-
-.news__punto {
-    width: .75rem;
-    height: .75rem;
-    margin: 15px;
-    border-radius: var(--brd_rad);
-    background-color: rgb(212, 213, 213);
-
-}
-
-.news__punto--active {
-    background-color: rgb(205, 25, 25);
-}
-
 /*--------------------------Carrosule--------------------------------*/
 
 .carrousel-2 {
@@ -248,14 +98,9 @@ h2, h3{
     transition: transform .5s ease;
 }
 
-.img-2 {
-    display: block;
+.img-2 {display: block;}
 
-}
-
-.lgt {
-    display: none;
-}
+.lgt {display: none;}
 
 
 .lgt-isActive {
@@ -305,15 +150,14 @@ h2, h3{
 .nav-btn-movies {
     position: absolute;
     top: 50%;
-
     width: 100%;
-    height: 4vw;
+    
 }
 
 .flecha {
     position: absolute;
-    width: 4vw;
-    height: 4vw;
+    width: 4em;
+    height: 4em;
     color: #a3a3a3;
 
     cursor: pointer;
@@ -326,15 +170,12 @@ h2, h3{
     box-shadow: 0 0.4em 0.1em 0.010em rgb(54, 31, 92);
     
     border-radius: var(--brd_rad);
+    z-index: 1;
 }
 
-.flecha__izq {
-    left: 10px;
-}
+.flecha__izq {left: 10px;}
 
-.flecha__der {
-    right: 10px;
-}
+.flecha__der {right: 10px;}
 
 .flecha__izq:hover,
 .flecha__der:hover {
@@ -377,14 +218,10 @@ h2, h3{
 
 .ftrSup__li,
 .ftrInf__term,
-.ftrInf__red {
-    padding: 15px 10px;
-}
+.ftrInf__red {padding: 15px 10px;}
 
 
-.ftrInf {
-    margin-bottom: 50px;
-}
+.ftrInf {margin-bottom: 50px;}
 
 
 .ftrInf__icon {
@@ -399,10 +236,13 @@ h2, h3{
     .grande-2 {
         width: 250%;
     }
+    .flecha {
+        width: 3em;
+        height: 3em;
+    }
 }
 
 @media (max-width: 650px) {
-
     .ftrSup,
     .ftrInf {
         flex-flow: column nowrap;
@@ -415,13 +255,9 @@ h2, h3{
         flex-direction: column;
         width: 100%;
     }
-
-
-
 }
 
 @media (max-width: 450px) {
-
     .ftrSup,
     .ftrInf__terms,
     .ftrSup__secciones {

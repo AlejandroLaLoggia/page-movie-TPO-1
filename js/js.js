@@ -64,17 +64,18 @@ function mover(e) {
     let width = window.innerWidth;
     let id = e.target.getAttribute("id");
     let cards = 5;
-    let ancho = 10 * contador;
-
+    
     if (width <= 720) cards = 4;
-
+    
     if (!id) return;
-
+    
     (id == "next")
-        ? contador++
-        : contador--
-
+    ? contador++
+    : contador--
+    
     if (contador < 0 || contador > (10 - cards)) contador = 0;
+    
+    let ancho = 10 * contador;
 
     CARRUSEL.style.transform = `translatex(-${ancho}%)`;
 }
