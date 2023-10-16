@@ -14,13 +14,11 @@
 }
 
 body {
-    margin: 0;
+    margin: 0 auto; 
     padding: 0;
     box-sizing: border-box;
     background-color: var(--clr_bkg);
-    max-width: 1200px;
-    margin: auto;
-
+    /* max-width: 1400px; */
     font-family: var(--ff-body);
     color: var(--clr_blanco);
 
@@ -36,8 +34,11 @@ h3 {
 /*--------------------------Carrosule--------------------------------*/
 
 .carrousel-2 {
+    max-width: 1200px;
     position: relative;
     height: 100vh;
+    margin: auto;
+    background-image: linear-gradient(#000000, #1f132b), linear-gradient(137.48deg, #ffdb3b 10%, #FE53BB 45%, #8F51EA 67%, #0044ff 87%);
 }
 
 .carrousel-2__h3 {
@@ -211,7 +212,331 @@ h3 {
 
 
 
+/*--------------------------DANIELA---------------------*/
+
+/* ----- SECTION MOVIES ------  */
+.section-movies {
+    background-color: rgb(46, 46, 46);
+    width: 1fr;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: 100% 100%;
+    backdrop-filter: blur(1rem);
+    transition: 0.5s;
+    background-image: linear-gradient(#1f132b, #000000), linear-gradient(137.48deg, #3bffc4 10%, #FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+.header-movies,
+.header-series {
+    text-align: center;
+}
+.header-movies p,
+.header-series p {
+    font-family: 'Poppins', sans-serif;
+    color: #ccc;
+    font-size: 20px;
+    margin: 20px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.header-movies h2,
+.header-series h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    color: #a3a3a3;
+    font-weight: bolder;
+    text-shadow: 5px 4px 3px rgb(103, 66, 163);
+    margin: 5px;
+    margin-top: 0;
+}
+.nav-movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+.nav-movies li {
+    list-style: none;
+}
+.nav-btn-movies {
+    padding: 0.1em 0.25em;
+    width: auto;
+    height: 4.2em;
+    background-color: #212121;
+    border: 0.08em solid #494949;
+    ;
+    border-radius: 0.3em;
+    font-size: 12px;
+}
+.nav-span-movies {
+    text-decoration: none;
+}
+.nav-btn-movies button,
+.nav-span-movies {
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #212121;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #a3a3a3;
+    border: 0.08em solid #494949;
+    box-shadow: 0 0.4em 0.1em 0.010em rgb(54, 31, 92);
+}
+.nav-btn-movies button,
+.nav-span-movies:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #c0bfbf;
+}
+.nav-btn-movies button,
+.nav-span-movies:not(hover) {
+    transition: all 1s;
+}
+/* ---cards movies and series --- */
+.body-movies,
+.body-series {
+    display: flex;
+    justify-content: center;
+}
+.movie-card,
+.series-card {
+    margin: 2px;
+    display: inline-block;
+    width: 15rem;
+    height: 22rem;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+}
+.movie-card:hover,
+.series-card:hover {
+    cursor: pointer;
+}
+.movie-overlay,
+.series-overlay {
+    background: rgba(0, 0, 0, 0.788);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+.movie-card:hover .movie-overlay {
+    opacity: 1;
+}
+.series-card:hover .series-overlay {
+    opacity: 1;
+}
+.movie-card img,
+.series-card img {
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    margin: auto;
+    transition: all ease-in-out 0.5s;
+}
+.movie-card:hover img,
+.series-card:hover img {
+    transform: scale(1.1);
+    filter: blur(2px);
+}
+.card-content {
+    text-align: center;
+    color: #a3a3a3;
+    text-shadow: 10px 4px 10px rgb(0, 0, 0);
+    z-index: 4;
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+.card-content p {
+    font-size: 16px;
+    color: #ccc;
+    padding: 2px;
+}
+.card-content button {
+    font-family: monospace;
+    font-size: 1rem;
+    color: rgb(186, 143, 255);
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(202, 172, 255);
+    background: #252525;
+    box-shadow: 3px 3px rgb(81, 33, 158);
+    cursor: pointer;
+    margin: 1px 0;
+}
+.card-content button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+.movie-card:hover .card-content {
+    top: 18%;
+    opacity: 1;
+}
+.series-card:hover .card-content {
+    top: 18%;
+    opacity: 1;
+}
+/* ----- SECTION SERIES ------  */
+.section-series {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1fr;
+    height: auto;
+    overflow: hidden;
+    height: auto;
+    background-size: 100% 100%;
+    backdrop-filter: blur(.5rem);
+    transition: 0.5s;
+    background-image: linear-gradient(#000000, #1f132b), linear-gradient(137.48deg, #ffdb3b 10%, #FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+#container-stars {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.5s;
+    backdrop-filter: blur(1rem);
+}
+#stars {
+    position: relative;
+    background: transparent;
+    width: 200rem;
+    height: 200rem;
+}
+#stars::after {
+    content: "";
+    position: absolute;
+    top: -10rem;
+    left: -100rem;
+    width: 100%;
+    height: 100%;
+    animation: animStarRotate 90s linear infinite;
+}
+#stars::after {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+}
+#stars::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -5%;
+    width: 100%;
+    height: 100%;
+    animation: animStar 60s linear infinite;
+}
+#stars::before {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+    opacity: 0.5;
+}
+@keyframes animStar {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-135rem);
+    }
+}
+@keyframes animStarRotate {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0);
+    }
+}
+@keyframes gradient_301 {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes pulse_3011 {
+    0% {
+        transform: scale(0.75);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+    100% {
+        transform: scale(0.75);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+
+
 /*-------------------MEDIA QUERIES----------------*/
+@media screen and (max-width: 800px) {
+    .movie-card,
+    .series-card {
+        display: flexbox;
+        width: 45%;
+        height: auto;
+    }
+    .header-movies p,
+    .header-series p {
+        font-size: 15px;
+        margin: 10px;
+        padding: 3px;
+        margin-top: 10px;
+    }
+    .header-movies h2,
+    .header-series h2 {
+        font-size: 20px;
+    }
+    .nav-btn-movies {
+        width: auto;
+        height: 4.2em;
+        font-size: 10px;
+    }
+    .nav-btn-movies button,
+    .nav-span-movies {
+        width: 8.25em;
+        height: 2.5em;
+        font-size: 1.5em;
+    }
+    .card-content p {
+        font-size: 13px;
+    }
+    .card-content button {
+        font-size: .7rem;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+}
+
 @media (max-width: 720px) {
     .grande-2 {
         width: 250%;
@@ -265,6 +590,10 @@ h3 {
         display: flex;
         flex-direction: column;
         width: 100%;
+    }
+    .movie-card .series-card {
+        width: 70%;
+        height: 70%;
     }
 }
 
