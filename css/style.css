@@ -32,67 +32,6 @@ h3 {
     text-shadow: 5px 4px 3px rgb(103, 66, 163);
 }
 
-/*--------------------------HEADER---------------------*/
-
-.header {
-    color: white;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--clr_bkg);
-    padding: 10px;
-    margin: auto;
-}
-
-.header__logo,
-.ftrSup__logo {
-    width: 100px;
-    height: 55px;
-    padding-left: 20px;
-}
-
-.header__ul {
-    display: flex;
-    justify-content: end;
-
-}
-
-.header__li {
-    list-style: none;
-}
-
-.header__a {
-    text-decoration: none;
-    color: inherit;
-    padding: 0 20px;
-}
-
-/*-------------------------HERO---------------------*/
-
-.hero {
-    height: calc(100vh - 80px);
-    padding: 3%;
-    margin-bottom: 3%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../asstes/background_hero.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: rgba(33, 33, 33,.3);
-}
-
-.hero__h1 {
-    font-size: 60px;
-    margin: 4% 0;
-    color: var(--clr_font_title);
-}
-
-.hero__p {
-    color: var(--clr_font_title);
-    font-size: 24px;
-    width: 60%;
-    min-width: 300px;
-}
 
 /*--------------------------Carrosule--------------------------------*/
 
