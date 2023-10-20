@@ -18,6 +18,7 @@
 *.txt
 
 # Igonra imagen de prueba
+pruebas_ y_recursos/
 assets/img/trash/
 
 #Ignorar archivos photoshop
