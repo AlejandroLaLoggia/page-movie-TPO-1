@@ -1,5 +1,5 @@
 .bg-section-contacto {
-    background: linear-gradient(to right, rgba(34, 8, 59, 0.4), rgba(0, 0, 0, 0.8)), url('../asstes/contacto/bg_contacto_uno.jpg');
+    background: linear-gradient(to right, rgba(34, 8, 59, 0.4), rgba(0, 0, 0, 0.8)), url('../asstes/bg_contacto_uno.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
