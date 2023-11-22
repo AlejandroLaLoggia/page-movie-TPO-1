@@ -162,3 +162,48 @@ window.addEventListener('load', () => {
     mostrarUltimosPosters(nombresPeliculas, true, 'movie-list');
     mostrarUltimosPosters(nombresSeries, false, 'series-list');
 });
+
+
+
+//funcion para agregar suscriptor
+
+
+document.getElementById("btnForm").addEventListener("click", function(event){
+    event.preventDefault()
+
+    let email_ingresado = document.getElementById("email").value;
+    var emailtest = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/.test(email_ingresado); 
+
+    if(emailtest === false || email_ingresado.trim()==false){
+        alert("Por favor,ingrese un email valido.")
+        return false
+      }
+
+    console.log(email_ingresado );
+
+    let enviar_email = {
+        email: email_ingresado,
+        
+    }
+    console.log(enviar_email);
+    
+    let url = "http://localhost:5000/registro"
+    var options = {
+        body: JSON.stringify(enviar_email),
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+    }
+    fetch(url, options)
+        .then(function () {
+            console.log("creado")
+            alert("Grabado")
+            // Devuelve el href (URL) de la página actual
+            window.location.href = "/templates/personas.html";
+            
+        })
+        .catch(err => {
+            //this.errored = true
+            alert("Error al grabar" )
+            console.error(err);
+        })
+})
