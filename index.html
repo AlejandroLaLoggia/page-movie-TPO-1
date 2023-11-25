@@ -32,18 +32,21 @@
     <!--Encabezado Adrian y Navbar-->
     <header class="Encabezado">
         <nav class="header__navbar">
-        <ul class="header__ul">
-            <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Inicio</a></button></li>
-            <li><button class="nav-btn-movies"><a href="#estrenos" class="nav-span-movies">Estrenos</a></button></li>
-            <li><button class="nav-btn-movies"><a href="#peliculas" class="nav-span-movies">Peliculas</a></button></li>
-            <li><button class="nav-btn-movies"><a href="#series" class="nav-span-movies">Series</a></button></li>
-            <li><button class="nav-btn-movies"><a href="#contacto" class="nav-span-movies">Contacto</a></button></li>
-        </ul>
-    </nav>
-    <div class="header__container">
-        <h1 class="header__h1">Golden Ticket</h1>
-        <p class="header__p">El lugar para encontrar todas las peliculas y series</p>
-    </div>
+            <ul class="header__ul">
+                <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Inicio</a></button></li>
+                <li><button class="nav-btn-movies"><a href="#estrenos" class="nav-span-movies">Estrenos</a></button>
+                </li>
+                <li><button class="nav-btn-movies"><a href="#peliculas" class="nav-span-movies">Peliculas</a></button>
+                </li>
+                <li><button class="nav-btn-movies"><a href="#series" class="nav-span-movies">Series</a></button></li>
+                <li><button class="nav-btn-movies"><a href="#contacto" class="nav-span-movies">Contacto</a></button>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__container">
+            <h1 class="header__h1">Golden Ticket</h1>
+            <p class="header__p">El lugar para encontrar todas las peliculas y series</p>
+        </div>
     </header>
 
     <section class="estrenos" id="estrenos"> <!-- Comienza el carrusel con los trailers-->
@@ -139,17 +142,28 @@
             <div class="col-10 col-md-6 bg-dark container-card-contacto">
                 <div class="card-contacto">
                     <div class="d-block mt-3 text-center">
-                        <h2>SUSCRÍBETE</h2>
+                        <h2 class="title-contacto">SUSCRÍBETE</h2>
                         <p>Y recibe todas las noticias sobre el séptimo arte.</p>
                     </div>
                     <div class="mx-3">
-                        <form class="input-group mb-3 mt-4" method="" id="form">
-                            <input id="email" type="email" name="email" class="form-control input-contacto" placeholder="Enter email"
-                                aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <form action="" class="input-group mb-3 mt-4 " method="POST" id="form">
+
+                            <div class="input-group mb-3">
+                                <input id="nombre" type="nombre" name="nombre" class="form-control"
+                                    placeholder="Nombre" aria-label="Recipient's username"
+                                    aria-describedby="button-addon2">
+                            </div>
                             
-                                <!-- <button class="nav-btn-movies" type="submit" onclick="guardar()">-->
-                                <button class="nav-btn-movies" type="submit" id="btnForm"><a href="#"
-                                    class="nav-span-movies">Subscribirse</a></button>
+                            <div class="input-group mb-3">
+                                <input id="email" type="email" name="email" class="form-control"
+                                    placeholder="Email" aria-label="Recipient's username"
+                                    aria-describedby="button-addon2">
+                            </div>
+                            <!-- <button class="nav-btn-movies" type="submit" onclick="guardar()">-->
+                            <div class="nav-btn-movies mx-auto">
+                                <input class="nav-span-movies" type="submit" id="btnForm">
+
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -180,7 +194,8 @@
             </ul>
             <ul class="ftrInf__redes">
                 <li class="ftrInf__red">
-                    <a href="https://www.facebook.com/" class="ftrInf__a" title="Enlace a Facebook" target="_blank" rel="noopener noreferer">
+                    <a href="https://www.facebook.com/" class="ftrInf__a" title="Enlace a Facebook" target="_blank"
+                        rel="noopener noreferer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="ftrInf__icon" viewBox="0 0 16 16">
                             <path
@@ -189,7 +204,8 @@
                     </a>
                 </li>
                 <li class="ftrInf__red">
-                    <a href="https://twitter.com/?lang=es" class="ftrInf__a" title="Enlace a Twitter" target="_blank" rel="noopener noreferer">
+                    <a href="https://twitter.com/?lang=es" class="ftrInf__a" title="Enlace a Twitter" target="_blank"
+                        rel="noopener noreferer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="ftrInf__icon" viewBox="0 0 16 16">
                             <path
@@ -198,10 +214,13 @@
                     </a>
                 </li>
                 <li class="ftrInf__red">
-                    <a href="https://www.instagram.com/" class="ftrInf__a" title="Enlace a Instagram" target="_blank" rel="noopener noreferer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="ftrInf__icon" viewBox="0 0 16 16">
-                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                          </svg>
+                    <a href="https://www.instagram.com/" class="ftrInf__a" title="Enlace a Instagram" target="_blank"
+                        rel="noopener noreferer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="ftrInf__icon" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                        </svg>
                     </a>
                 </li>
             </ul>

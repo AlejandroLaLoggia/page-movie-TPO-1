@@ -32,6 +32,7 @@
                                 <thead>
                                     <tr>
                                         <th >ID</th>
+                                        <th >Nombre</th>
                                         <th >Email</th>
                                         <th></th>
                                     </tr>
@@ -40,12 +41,13 @@
                                    
                                     <tr v-for="persona in personas">
                                         <td >{{persona.id}}</td>
+                                        <td>{{persona.nombre}}</td>
                                         <td>{{persona.email}}</td>
                                         
                                         <td>
                                             <button type="button"  v-on:click="eliminar(persona.id)">Eliminar</button>
                                             
-                                            <a class="boton" :href="'editar_persona.html?id='+ persona.id+'&email=' +persona.email" >Editar</a>
+                                            <a class="boton" :href="'editar_persona.html?id='+ persona.id+ '&nombre=' + persona.nombre + '&email=' +persona.email" >Editar</a>
                                         </td>
                                     </tr>
                                 </tbody>

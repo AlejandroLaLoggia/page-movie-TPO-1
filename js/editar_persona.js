@@ -13,8 +13,9 @@ let datos = new URLSearchParams(cadena);
 let resultado = {};
 
 // Iterar sobre los parámetros y guardar los nombres y valores en el objeto resultado
-for (const [email, valor] of datos) {
-    resultado[email] = valor;
+for (const [clave, valor] of datos) {
+    
+    resultado[clave] = valor;
 }
 
 // Imprimir el resultado
@@ -23,16 +24,19 @@ console.log(resultado); // Esto mostrará un objeto con las variables y sus valo
 
 // Procedimiento para mostrar los datos a editar en el formulario de edición
 document.getElementById("id").value = resultado["id"]
+document.getElementById("nombre").value = resultado["nombre"]
 document.getElementById("email").value = resultado["email"]
 
 
 function modificar() {
     let id = document.getElementById("id").value
+    let nombreForm = document.getElementById("nombre").value
+
     let emailForm = document.getElementById("email").value
 
     let persona = {
-        email: emailForm,
-        
+        nombre:nombreForm,
+        email: emailForm
     }
     let url = "http://localhost:5000/update/"+id
     var options = {

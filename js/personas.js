@@ -27,6 +27,7 @@ const { createApp } = Vue
                     console.error(err);
                     this.error=true              
                 });
+                console.log(this.personas)
         },
         // el id se necesita para buscar en la DB y eliminarlo
         eliminar(id) {

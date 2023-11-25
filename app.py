@@ -52,7 +52,12 @@ db = SQLAlchemy(app)
 # 7. Definir la tabla 
 class Persona(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(50))
     email = db.Column(db.String(50))
+
+    def __init__(self,nombre,email):   #crea el  constructor de la clase
+        self.nombre=nombre   # no hace falta el id porque lo crea sola mysql por ser auto_incremento
+        self.email=email
 
 # 8. Crear la tabla al ejecutarse la app
 with app.app_context():
@@ -72,10 +77,11 @@ def registro():
     # {
     #   "nombre": "Luis"
     # }
+    nombre_recibido = request.json["nombre"]
     email_recibido = request.json["email"]
 
     # ¿Cómo insertar el registro en la tabla?
-    nuevo_registro = Persona(email=email_recibido)
+    nuevo_registro = Persona(nombre=nombre_recibido, email=email_recibido)
     db.session.add(nuevo_registro)
     db.session.commit()
 
@@ -91,7 +97,8 @@ def personas():
 
     data_serializada = [] # Lista de diccionarios
     for registro in all_registros:
-        data_serializada.append({"id":registro.id, "email":registro.email})
+        data_serializada.append({"id":registro.id,"nombre":registro.nombre ,"email":registro.email})
+        
 
     # transformar a json
     return jsonify(data_serializada)
@@ -104,13 +111,15 @@ def update(id):
     update_persona = Persona.query.get(id)
 
     # Recibir los nuevos datos a guardar
+    nombre = request.json["nombre"]
     email = request.json["email"]
 
     # Sobreescribir la info
+    update_persona.nombre = nombre
     update_persona.email = email
     db.session.commit()
 
-    data_serializada = [{"id": update_persona.id, "email": update_persona.email}]
+    data_serializada = [{"id": update_persona.id,"nombre": update_persona.nombre , "email": update_persona.email}]
     return jsonify(data_serializada)
 
     
@@ -123,7 +132,7 @@ def borrar(id):
     db.session.delete(delete_persona)
     db.session.commit()
 
-    data_serializada = [{"id": delete_persona.id, "email": delete_persona.email}]
+    data_serializada = [{"id": delete_persona.id,"nombre": delete_persona.nombre ,"email": delete_persona.email}]
     return jsonify(data_serializada)
 
 
