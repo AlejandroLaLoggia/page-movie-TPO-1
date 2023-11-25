@@ -29,22 +29,33 @@
 
 
 <body>
-    <!--Encabezado Adrian y Navbar-->
-    <header class="Encabezado">
+    <header class="header__container">
         <nav class="header__navbar">
-        <ul class="header__ul">
-            <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Inicio</a></button></li>
-            <li><button class="nav-btn-movies"><a href="#estrenos" class="nav-span-movies">Estrenos</a></button></li>
-            <li><button class="nav-btn-movies"><a href="#peliculas" class="nav-span-movies">Peliculas</a></button></li>
-            <li><button class="nav-btn-movies"><a href="#series" class="nav-span-movies">Series</a></button></li>
-            <li><button class="nav-btn-movies"><a href="#contacto" class="nav-span-movies">Contacto</a></button></li>
-        </ul>
-    </nav>
-    <div class="header__container">
-        <h1 class="header__h1">Golden Ticket</h1>
-        <p class="header__p">El lugar para encontrar todas las peliculas y series</p>
-    </div>
+            <ul class="header__ul">
+                <li>
+                    <a href="#">Inicio</a>
+                </li>
+                <li>
+                    <a href="#estrenos">Estrenos</a>
+                </li>
+                <li>
+                    <a href="#peliculas">Peliculas</a>
+                </li>
+                <li>
+                    <a href="#series">Series</a>
+                </li>
+                <li>
+                    <a href="#contacto">Contacto</a>
+                </li>
+            </ul>
+        </nav>
     </header>
+    <main class="main-movie" id="#">
+        <div class="main__container">
+            <h1 class="main__h1">Golden Ticket</h1>
+            <p class="main__p">El lugar para encontrar todas las peliculas y series</p>
+        </div>
+    </main>
 
     <section class="estrenos" id="estrenos"> <!-- Comienza el carrusel con los trailers-->
         <div class="carrousel-2" id="estrenos">
@@ -63,26 +74,18 @@
                     <img src="./asstes/wish.jpg" alt="img 6" class="img-2">
                 </div>
             </div>
-
             <!-- Flechas-->
             <div class="btn-estrenos" id="flechas">
-
                 <img class="flecha flecha__izq" id="prev" src="./asstes/caret-left.svg" alt="">
-
                 <img class="flecha flecha__der" id="next" src="./asstes/caret-right.svg" alt="">
-
             </div>
-
             <div class="lgt" id="lightbox">
                 <svg class="lgt__close" id="close" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                     fill="currentColor" viewBox="0 0 16 16">
                     <path
                         d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                 </svg>
-
-
                 <div class="lgt__iframe"><!-- DIV donde se reproduce los videos--></div>
-
             </div>
         </div>
     </section>
@@ -93,13 +96,6 @@
             <div class="header-movies">
                 <p class="subtitle-movies">Top Online</p>
                 <h2 class="title-movies">Peliculas Recomendadas</h2>
-                <ul class="nav-movies">
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Drama</a></button></li>
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Comedia</a></button></li>
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Ciencia Ficcion</a></button>
-                    </li>
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Terror</a></button></li>
-                </ul>
             </div>
             <div class="body-movies">
                 <ul id="movie-list"></ul>
@@ -108,7 +104,7 @@
     </section>
 
     <section id="series">
-        <!-- Seccion Series Daniela -->
+
         <div class="section-series">
             <div id="container-stars">
                 <div id="stars"></div>
@@ -116,13 +112,6 @@
             <div class="header-series">
                 <p class="subtitle-series">Top series recomendadas</p>
                 <h2 class="title-series">TV Series</h2>
-                <ul class="nav-movies">
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Drama</a></button></li>
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Comedia</a></button></li>
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Ciencia Ficcion</a></button>
-                    </li>
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Terror</a></button></li>
-                </ul>
             </div>
             <div class="body-series">
                 <ul id="series-list"></ul>
@@ -131,7 +120,6 @@
     </section>
 
     <section class="bg-section-contacto" id="contacto">
-        <!-- Seccion de Contacto Daniela -->
         <section id="stars-contacto"></section>
         <section id="stars-contacto2"></section>
         <section id="stars-contacto3"></section>
@@ -144,10 +132,11 @@
                     </div>
                     <div class="mx-3">
                         <form class="input-group mb-3 mt-4">
-                            <input type="email" name="email" class="form-control input-contacto" placeholder="Enter email"
-                                aria-label="Recipient's username" aria-describedby="button-addon2" required>
-                            <button class="nav-btn-movies" type="submit"><a href="#"
-                                    class="nav-span-movies">Subscribirse</a></button>
+                            <input type="email" name="email" class="form-control input-contacto"
+                                placeholder="Enter email" aria-label="Recipient's username"
+                                aria-describedby="button-addon2" required>
+                            <button class="btn-contacto" type="submit"><a href="#"
+                                    class="span-contacto">Subscribirse</a></button>
                         </form>
                     </div>
                 </div>
