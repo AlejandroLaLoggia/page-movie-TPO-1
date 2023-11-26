@@ -162,3 +162,72 @@ window.addEventListener('load', () => {
     mostrarUltimosPosters(nombresPeliculas, true, 'movie-list');
     mostrarUltimosPosters(nombresSeries, false, 'series-list');
 });
+
+
+
+//funcion para agregar suscriptor
+
+const form=document.querySelector("#form")
+
+document.getElementById("btnForm").addEventListener("click", async function(event){
+    event.preventDefault()
+
+    let nombre_ingresado= document.querySelector("#nombre").value;
+    let email_ingresado = document.getElementById("email").value;
+    let urlform="https://formspree.io/f/mwkdjgrl";
+    var emailtest = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/.test(email_ingresado);
+    var nombreTest = /^[a-zA-Z]+$/.test(nombre_ingresado); 
+    
+  
+    if(!emailtest || !nombreTest || !email_ingresado.trim() || !nombre_ingresado.trim()){
+        event.preventDefault()
+        alert("Por favor,ingrese un nombre o email valido.")
+        return false
+    }
+
+
+    let datos_suscriptor = {
+        nombre: nombre_ingresado,
+        email: email_ingresado}
+
+
+    //Envio de formulario
+
+    const fd= new FormData(form)
+
+    const response = await fetch(urlform, {
+        method: 'POST',
+        body: fd,
+        headers: {Accept:'application/json'}
+    })
+
+    if(response.ok){
+        alert("Formulario Enviado")
+    }
+    else{
+        alert("NO se pudo enviar el formulario")
+    }
+
+    //Envio de datos para la BBDD
+    
+    let url = "http://localhost:5000/registro"
+    var options = {
+        body: JSON.stringify(datos_suscriptor),
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+    }
+    fetch(url, options)
+        .then(function () {
+            console.log("creado")
+            alert("Grabado")
+            // Devuelve el href (URL) de la página actual
+            window.location.href = "/templates/personas.html";
+            
+        })
+        .catch(err => {
+            //this.errored = true
+            alert("Error al grabar" )
+            console.error(err);
+        })
+       
+})
