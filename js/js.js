@@ -210,7 +210,7 @@ document.getElementById("btnForm").addEventListener("click", async function(even
 
     //Envio de datos para la BBDD
     
-    let url = "http://localhost:5000/registro"
+    let url = "https://gdticket.pythonanywhere.com/registro"
     var options = {
         body: JSON.stringify(datos_suscriptor),
         method: 'POST',

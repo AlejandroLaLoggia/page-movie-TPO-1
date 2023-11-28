@@ -38,7 +38,7 @@ function modificar() {
         nombre:nombreForm,
         email: emailForm
     }
-    let url = "http://localhost:5000/update/"+id
+    let url = "https://gdticket.pythonanywhere.com/update/"+id
     var options = {
         body: JSON.stringify(persona),
         method: 'PUT',

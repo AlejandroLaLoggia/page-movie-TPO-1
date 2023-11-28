@@ -3,14 +3,15 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
-        url:"http://127.0.0.1:5000/templates/personas",
+        url:"https://gdticket.pythonanywhere.com/templates/personas",
         personas:[],
         error:false,
         cargando:true
+        
       }
     },
     // Se llama después de que la instancia haya 
-    // terminado de procesar todas las opciones relacionadas con el estado.
+    // terminado de procesar todas las opciones relacionadas con el estado. 
     created() {
         this.fetchData(this.url)  // Invocando al método
     },
@@ -27,11 +28,11 @@ const { createApp } = Vue
                     console.error(err);
                     this.error=true              
                 });
-                console.log(this.personas)
+          
         },
         // el id se necesita para buscar en la DB y eliminarlo
         eliminar(id) {
-            const url = 'http://localhost:5000/borrar/' + id;
+            const url = 'https://gdticket.pythonanywhere.com/borrar/' + id;
             var options = {
                 method: 'DELETE',
             }

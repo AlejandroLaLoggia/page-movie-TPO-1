@@ -9,7 +9,7 @@ function guardar() {
     }
     console.log(enviar_email);
     
-    let url = "http://localhost:5000/registro"
+    let url = "https://gdticket.pythonanywhere.com/registro"
     var options = {
         body: JSON.stringify(enviar_email),
         method: 'POST',
