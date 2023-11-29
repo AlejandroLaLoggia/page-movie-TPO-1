@@ -29,31 +29,51 @@
 
 
 <body>
-    <!--Encabezado Adrian y Navbar-->
-    <header class="Encabezado">
+    <header class="header__container">
         <nav class="header__navbar">
             <ul class="header__ul">
-                <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Inicio</a></button></li>
-                <li><button class="nav-btn-movies"><a href="#estrenos" class="nav-span-movies">Estrenos</a></button>
+                <li>
+                    <a href="#">Inicio</a>
                 </li>
-                <li><button class="nav-btn-movies"><a href="#peliculas" class="nav-span-movies">Peliculas</a></button>
+                <li>
+                    <a href="#estrenos">Estrenos</a>
                 </li>
-                <li><button class="nav-btn-movies"><a href="#series" class="nav-span-movies">Series</a></button></li>
-                <li><button class="nav-btn-movies"><a href="#contacto" class="nav-span-movies">Contacto</a></button>
+                <li>
+                    <a href="#peliculas">Peliculas</a>
+                </li>
+                <li>
+                    <a href="#series">Series</a>
+                </li>
+                <li>
+                    <a href="#contacto">Contacto</a>
                 </li>
             </ul>
         </nav>
-        <div class="header__container">
-            <h1 class="header__h1">Golden Ticket</h1>
-            <p class="header__p">El lugar para encontrar todas las peliculas y series</p>
-        </div>
     </header>
-
-    <section class="estrenos" id="estrenos"> <!-- Comienza el carrusel con los trailers-->
+    <main class="main-movie" id="#">
+        <div class="main__galley-container">
+            <div class="main__img-box active main__img-title">
+                <img src="./asstes/loki_bg1.jpg" alt="Loki img uno">
+            </div>
+            <div class="main__img-box">
+                <img src="./asstes/loki_bg5.jpg" alt="Loki img uno">
+            </div>
+            <div class="main__img-box">
+                <img src="./asstes/loki_bg4.jpg" alt="Loki img uno">
+            </div>
+            <div class="main__img-box">
+                <img src="./asstes/loki_bg2.jpg" alt="Loki img uno">
+            </div>
+            <div class="main__img-box">
+                <img src="./asstes/loki_bg3.jpg" alt="Loki img uno">
+            </div>
+        </div>
+    </main>
+    <section class="estrenos" id="estrenos"> 
         <div class="carrousel-2" id="estrenos">
             <h3 class="carrousel-2__h3">Próximos estrenos...</h3>
             <div class="wrapper">
-                <div class="grande-2" id="contenedor"> <!-- Contenedor del doble de tamaño-->
+                <div class="grande-2" id="contenedor"> 
                     <img src="./asstes/five_nights_at_freddys.jpg" alt="img 2" class="img-2">
                     <img src="./asstes/retribution.jpg" alt="img 3" class="img-2">
                     <img src="./asstes/the_marvels.jpg" alt="img 4" class="img-2">
@@ -66,26 +86,18 @@
                     <img src="./asstes/wish.jpg" alt="img 6" class="img-2">
                 </div>
             </div>
-
             <!-- Flechas-->
             <div class="btn-estrenos" id="flechas">
-
                 <img class="flecha flecha__izq" id="prev" src="./asstes/caret-left.svg" alt="">
-
                 <img class="flecha flecha__der" id="next" src="./asstes/caret-right.svg" alt="">
-
             </div>
-
             <div class="lgt" id="lightbox">
                 <svg class="lgt__close" id="close" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                     fill="currentColor" viewBox="0 0 16 16">
                     <path
                         d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                 </svg>
-
-
                 <div class="lgt__iframe"><!-- DIV donde se reproduce los videos--></div>
-
             </div>
         </div>
     </section>
@@ -96,13 +108,6 @@
             <div class="header-movies">
                 <p class="subtitle-movies">Top Online</p>
                 <h2 class="title-movies">Peliculas Recomendadas</h2>
-                <ul class="nav-movies">
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Drama</a></button></li>
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Comedia</a></button></li>
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Ciencia Ficcion</a></button>
-                    </li>
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Terror</a></button></li>
-                </ul>
             </div>
             <div class="body-movies">
                 <ul id="movie-list"></ul>
@@ -111,7 +116,7 @@
     </section>
 
     <section id="series">
-        <!-- Seccion Series Daniela -->
+
         <div class="section-series">
             <div id="container-stars">
                 <div id="stars"></div>
@@ -119,13 +124,6 @@
             <div class="header-series">
                 <p class="subtitle-series">Top series recomendadas</p>
                 <h2 class="title-series">TV Series</h2>
-                <ul class="nav-movies">
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Drama</a></button></li>
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Comedia</a></button></li>
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Ciencia Ficcion</a></button>
-                    </li>
-                    <li><button class="nav-btn-movies"><a href="#" class="nav-span-movies">Terror</a></button></li>
-                </ul>
             </div>
             <div class="body-series">
                 <ul id="series-list"></ul>
@@ -134,7 +132,6 @@
     </section>
 
     <section class="bg-section-contacto" id="contacto">
-        <!-- Seccion de Contacto Daniela -->
         <section id="stars-contacto"></section>
         <section id="stars-contacto2"></section>
         <section id="stars-contacto3"></section>
@@ -149,19 +146,17 @@
                         <form action="" class="input-group mb-3 mt-4 " method="POST" id="form">
 
                             <div class="input-group mb-3">
-                                <input id="nombre" type="nombre" name="nombre" class="form-control"
-                                    placeholder="Nombre" aria-label="Recipient's username"
-                                    aria-describedby="button-addon2">
+                                <input id="nombre" type="nombre" name="nombre" class="form-control" placeholder="Nombre"
+                                    aria-label="Recipient's username" aria-describedby="button-addon2">
                             </div>
-                            
+
                             <div class="input-group mb-3">
-                                <input id="email" type="email" name="email" class="form-control"
-                                    placeholder="Email" aria-label="Recipient's username"
-                                    aria-describedby="button-addon2">
+                                <input id="email" type="email" name="email" class="form-control" placeholder="Email"
+                                    aria-label="Recipient's username" aria-describedby="button-addon2">
                             </div>
                             <!-- <button class="nav-btn-movies" type="submit" onclick="guardar()">-->
-                            <div class="nav-btn-movies mx-auto">
-                                <input class="nav-span-movies" type="submit" id="btnForm">
+                            <div class="btn-contact mx-auto">
+                                <input class="span-contacto" type="submit" id="btnForm">
 
                             </div>
                         </form>
