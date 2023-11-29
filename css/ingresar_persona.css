@@ -1,10 +1,36 @@
-*{
-    margin: 0%;
-    padding: 0%;
+:root {
+    --clr_bkg: rgb(21, 2, 36);
+    --clr_gradiente: rgb(21, 2, 36), rgb(40, 2, 70);
+    --clr_blanco: rgb(255, 255, 255);
+    --clr_font_title: #a3a3a3;
+
+    --brd_rad: 0.3em;
+    --brd_btn: 50%;
+
+    --ff-body: 'DM Serif Display', serif;
+    --ff-title: 'Poppins', sans-serif;
+   
 }
 
-.container-form{
-    background: radial-gradient(circle, #ffcccc, #ff9999);
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    background: linear-gradient(to right, rgba(34, 8, 59, 0.4), rgba(0, 0, 0, 0.8)), url('../asstes/bg_contacto_uno.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    min-height: 100vh;
+    
+    font-family: var(--ff-body);
+    font-size: 16px;
+    color: var(--clr_font_title);
+    scroll-behavior: smooth;
+}
+
+
+.container{
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -12,55 +38,61 @@
     justify-content: center;
 }
 
-form{
-    background-color: #001F3F;
-    width: 30vw;
-    height: 15vh;
-    border-radius: 3vw;
+
+.form__container{
+    background-color: rgba(34, 38, 42,0.8); 
+    border-collapse: collapse;
+    min-width: 40vw;
+    max-width: 50vw;
+    padding: 4vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 0.5rem;
 }
 
-.entrada{
-    margin-bottom: 2vh;
+.form__group{
+    padding: 10px 0;
+    
+    display: flex;
+    flex-flow: row wrap;
+
+    width: 50%;
+    justify-content: space-between;
 }
 
-label{
-    font-size: 2vw;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: aliceblue;
-}
-
-button {
-    padding: 0.2vw 0.3vh;
-    font-size: 1.6vw;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: #ff9999;
-    color: #ffffff;
+.form__id{
+    background-color: transparent;
     border: none;
-    border-radius: 0.5vw;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-  }
-
-  button:hover {
-    background-color: #ff6666;
+    color: var(--clr_font_title);
+    width: auto;
 }
 
 .modificar{
-    color: #f2f2f2;
-    margin-right: 2vh;
-    background-color: #ff9999; /* Color de fondo */
-    color: white; /* Color del texto */
-    padding: 0.5vw 3vh; /* Relleno interno */
-    border: none; /* Quita el borde */
-    border-radius: 2vw; /* Borde redondeado */
-    text-align: center; /* Alineación del texto */
-    text-decoration: none; /* Quita el subrayado predeterminado */
-    display: inline-block; /* Mostrar como bloque en línea */
-    font-size: 1vw; /* Tamaño de fuente */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+
+    margin: 5px 0;
+    padding: 8px 32px;
+    color: #a3a3a3;
+    background-color: #212121;
+    border: 0.08em solid #494949;
+    box-shadow: 0 0.4em 0.1em 0.010em rgb(54, 31, 92);
+    border-radius: var(--brd_rad);
+    font-size: 16px;
 }
+
+
+.modificar:hover{
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #c0bfbf;
+}
+
+@media (max-width: 800px) {
+ 
+    .form__group{
+        width: 100%;
+    }
+}
+
+
