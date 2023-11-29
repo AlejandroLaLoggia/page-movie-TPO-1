@@ -75,7 +75,7 @@ h3 {
     font-family: var(--ff-title);
     text-transform: uppercase;
     font-size: 1em;
-    color: #929292;
+    color:rgb(174, 174, 255);
     text-decoration: none;
     display: block;
     text-shadow: 0px 1px 2px rgb(103, 66, 163);
@@ -84,7 +84,7 @@ h3 {
 .header__navbar ul li a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
     background: rgba(62, 13, 114, 0.348);
-    color: rgb(209, 181, 255);
+    color:rgb(135, 135, 248);
     font-size: 1.08em;
     transform: translate(0, 0.1em);
     border-radius: 0.2em;
@@ -97,9 +97,7 @@ h3 {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-
 }
-
 .main__galley-container {
     height: 80%;
     width: 100%;
@@ -107,12 +105,6 @@ h3 {
     margin: 5% auto 0;
     box-sizing: border-box;
     padding: 0;
-    /* 
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: flex-start; */
 }
 
 .main__img-box {
@@ -121,59 +113,69 @@ h3 {
     flex-basis: 0;
     transition: .5s;
     position: relative;
+    overflow: hidden;
 }
 
+.main__img-box::before {
+    content: "GOLDEN TICKET";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(53, 26, 88, 0.7);
+    opacity: 0;
+    transition: opacity .5s;
+    font-size: 2rem;
+    color:rgb(174, 174, 255);
+    inset: 0;
+    display: grid;
+    place-items: center;
+}
+.main__img-box::after {
+    content: "! El mejor website para disfrutar del septimo arte ¡"; 
+    color:rgb(174, 174, 255);
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity .5s;
+    place-items: center;
+}
+
+.main__img-box:hover::before,
+.main__img-box:hover::after {
+    opacity: 1;
+}
 .main__img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: .5s;
 }
-.main__img-box:hover{
+.main__img-box:hover {
     flex-basis: 50%;
-
 }
-.active{
+.active {
     flex-basis: 50%;
-
 }
-.main__galley-container:hover .active{
+.main__galley-container:hover .active {
     flex-basis: 0;
-
 }
-.main__img-box:nth-child(1):hover{
+.main__img-box:nth-child(1):hover {
     flex-basis: 50%;
-
 }
-.img-title-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; 
+@media (max-width: 768px) {
+    .main__img-box::before {
+        font-size: 1.5rem;
+    }
+
+    .main__img-box::after {
+        font-size: 0.8rem; 
+        bottom: 20%; 
+    }
 }
-
-.img-title {
-    color: white; 
-    text-align: center;
-    margin: 0;
-}
-
-
-/* .main__h1 {
-    font-family: var(--ff-title);
-    font-size: 4rem;
-    text-shadow: 0px 1px 4px rgb(103, 66, 163);
-}
-
-.main__p {
-    font-size: 1.2rem;
-    text-shadow: 5px 4px 3px rgb(103, 66, 163);
-    font-size: 30px;
-    color: #f2f1f1;
-    text-shadow: 2px 2px 2px rgb(103, 66, 163), 3px 3px 3px rgb(249, 249, 249);
-} */
-
 /*--------------------------Carrosule--------------------------------*/
 .estrenos {
     width: 100%;
