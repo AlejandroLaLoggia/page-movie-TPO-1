@@ -26,17 +26,17 @@ body {
 
 h1,h2,h3 {
     color: var(--clr_font_title);
-    text-shadow: 5px 4px 3px rgb(103, 66, 163);
+    text-shadow: 5px 4px 3px rgb(103, 66, 163), 5px 5px 3px rgb(234, 227, 247);
 }
 
 /*--------------------------Header--------------------------------*/
 .Encabezado {
-    background-image: url(../asstes/mega2.jpg);
+    background-image: url(../asstes/loki_3.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
-    height: 100vh;
+    height: 100svh;
 }
 
 .navbar li {
@@ -97,7 +97,8 @@ h1,h2,h3 {
 
 .header__p{
     font-size: 30px;
-    text-shadow: 5px 4px 3px rgb(103, 66, 163);
+    color: #f2f1f1;
+    text-shadow: 2px 2px 2px rgb(103, 66, 163), 3px 3px 3px rgb(249, 249, 249);
 }
 
 
@@ -577,12 +578,13 @@ h1,h2,h3 {
     }
 }
 
-
+/*-------------------CONTACTO----------------*/
 
 /*-------------------MEDIA QUERIES----------------*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 840px) {
     
     .header__h1{
+        padding-top: 30px;
         font-size: 60px;
     }
     .header__p{
@@ -628,6 +630,15 @@ h1,h2,h3 {
 }
 
 @media (max-width: 720px) {
+    
+    .Encabezado{
+        background-image: url(../asstes/loki_3_mob.png);
+       
+    }
+    .header__h1{
+        padding-top: 60px;
+        
+    }
     .grande-2 {
         width: 250%;
     }
@@ -640,6 +651,10 @@ h1,h2,h3 {
 
 @media (max-width: 650px) {
 
+
+    .header__h1{
+        padding-top: 80px;
+    }
     .ftrSup,
     .ftrInf {
         flex-flow: column nowrap;
@@ -654,10 +669,17 @@ h1,h2,h3 {
         font-size: var(--fs_h3_mobile);
     }
 
+    .btn-estrenos{
+        display: none;
+    }
+    
+    
     .grande-2 {
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column; */
         width: 100%;
+        overflow-y: auto;
+        justify-content: flex-start;
         
     }
     .movie-card .series-card {
@@ -667,6 +689,11 @@ h1,h2,h3 {
 }
 
 @media (max-width: 450px) {
+
+    .header__h1{
+        padding-top: 150px;
+        
+    }
 
     .ftrSup,
     .ftrInf__terms,
