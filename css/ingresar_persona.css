@@ -52,6 +52,12 @@ body {
     border: 0.5rem;
 }
 
+.form__title{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
 .form__group{
     padding: 10px 0;
     

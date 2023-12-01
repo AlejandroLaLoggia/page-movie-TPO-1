@@ -34,6 +34,16 @@ function modificar() {
 
     let emailForm = document.getElementById("email").value
 
+    var emailtest = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/.test(emailForm);
+    var nombreTest = /^[a-zA-Z]+$/.test(nombreForm); 
+    
+  
+    if(!emailtest || !nombreTest || !emailForm.trim() || !nombreForm.trim()){
+        alert("Por favor,ingrese un nombre o email valido.")
+        return false
+    }
+
+
     let persona = {
         nombre:nombreForm,
         email: emailForm
