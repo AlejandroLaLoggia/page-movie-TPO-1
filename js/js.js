@@ -221,13 +221,15 @@ document.getElementById("btnForm").addEventListener("click", async function(even
             console.log("creado")
             alert("Grabado")
             // Devuelve el href (URL) de la página actual
-            window.location.href = "/templates/personas.html";
-            
+            //window.location.href = "/templates/login.html";
+        
         })
         .catch(err => {
             //this.errored = true
             alert("Error al grabar" )
             console.error(err);
         })
-       
+    
+        document.querySelector("#nombre").value="";
+        document.getElementById("email").value="";
 })

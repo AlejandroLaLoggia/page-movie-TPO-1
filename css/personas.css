@@ -1,11 +1,35 @@
-*{
-    margin: 0%;
-    padding: 0%;
+:root {
+    --clr_bkg: rgb(21, 2, 36);
+    --clr_gradiente: rgb(21, 2, 36), rgb(40, 2, 70);
+    --clr_blanco: rgb(255, 255, 255);
+    --clr_font_title: #a3a3a3;
+
+    --brd_rad: 0.3em;
+    --brd_btn: 50%;
+
+    --ff-body: 'DM Serif Display', serif;
+    --ff-title: 'Poppins', sans-serif;
+   
 }
 
+body {
+    /*background-image: url(../asstes/bg_contacto_uno.jpg);*/
+    background: linear-gradient(to right, rgba(34, 8, 59, 0.4), rgba(0, 0, 0, 0.8)), url('../asstes/bg_contacto_uno.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    
+    font-family: var(--ff-body);
+    color: var(--clr_font_title);
+    scroll-behavior: smooth;
+}
+
+
 .container{
-    background: radial-gradient(circle, #ffcccc, #ff9999);
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,23 +38,24 @@
 
 
 table {
-    background-color: #001F3F;
+    background-color: rgba(34, 38, 42,0.8); 
     border-collapse: collapse;
     width: 30vw;
     max-width: 60vw;
     margin: 2vw auto;
-    font-family: Arial, sans-serif;
+    
   }
 
+  
 th, td {
-    border: 0.1vw solid #dddddd;
+    border: 0.1vw solid #aaaaaa;
     padding: 0.8vw;
     text-align: left;
-    color: #dddddd;
+    
   }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #aaaaaa;
     font-weight: bold;
     color: #001F3F;
 }
@@ -40,15 +65,13 @@ a{
     color: #dddddd;
 }
 
-td:hover{
-    background-color: #f2f2f2;
-    color:#001F3F
+
+.btn__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-a:hover{
-    background-color: #f2f2f2;
-    color:#001F3F
-}
 
 .menu{
     text-decoration: none;
@@ -63,52 +86,59 @@ a:hover{
 
 }
 
-button{
-    
-    margin-right: 2vh;
-    background-color: red; /* Color de fondo */
-    color: white; /* Color del texto */
-    padding: 0.5vw 3vh; /* Relleno interno */
-    border: none; /* Quita el borde */
-    border-radius: 2vw; /* Borde redondeado */
-    text-align: center; /* Alineación del texto */
-    text-decoration: none; /* Quita el subrayado predeterminado */
-    display: inline-block; /* Mostrar como bloque en línea */
-    font-size: 1vw; /* Tamaño de fuente */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-    
+
+.btn__del,
+.btn__edit{
+    color: #a3a3a3;
+    background-color: #212121;
+    border: 0.08em solid #494949;
+    box-shadow: 0 0.4em 0.1em 0.010em rgb(54, 31, 92);
+    border-radius: var(--brd_rad);
+    margin: 0 5px;
+    padding: 0 15px;
 }
 
-.boton{
-    
-    color: #f2f2f2;
-    margin-right: 2vh;
-    background-color: #4CAF50; /* Color de fondo */
-    color: white; /* Color del texto */
-    padding: 0.5vw 3vh; /* Relleno interno */
-    border: none; /* Quita el borde */
-    border-radius: 2vw; /* Borde redondeado */
-    text-align: center; /* Alineación del texto */
-    text-decoration: none; /* Quita el subrayado predeterminado */
-    display: inline-block; /* Mostrar como bloque en línea */
-    font-size: 1vw; /* Tamaño de fuente */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+.btn__del:hover,
+.btn__edit:hover{
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #c0bfbf;
 }
+
+.btn__del:hover{
+    background-color: rgba(207, 32, 32, 0.7);
+}
+.btn__edit:hover{
+    background-color:rgba(11, 173, 11, 0.7);
+}
+
+
 
 .nuevo{
-    color: #f2f2f2;
-    margin-right: 2vh;
-    background-color: #001F3F50; /* Color de fondo */
-    color: white; /* Color del texto */
-    padding: 0.5vw 3vh; /* Relleno interno */
-    border: none; /* Quita el borde */
-    border-radius: 2vw; /* Borde redondeado */
-    text-align: center; /* Alineación del texto */
-    text-decoration: none; /* Quita el subrayado predeterminado */
-    display: inline-block; /* Mostrar como bloque en línea */
-    font-size: 1vw; /* Tamaño de fuente */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+
+    font-family: var(--ff-title);
+    font-size: 2rem; 
+    color: var(--clr_font_title);
+    text-shadow: 2px 2px 3px rgb(103, 66, 163), 3px 3px 3px rgb(234, 227, 247);
+    text-decoration: none;
+    
+    
 }
 
+.nuevo:hover{
+    text-shadow: 4px 4px 4px rgb(103, 66, 163), 5px 5px 8px rgb(234, 227, 247);
+    }
 
+    @media (max-width: 600px) {
 
+        .btn__container{
+            flex-direction: column;
+        }
+        
+    .btn__del,
+    .btn__edit{
+        padding: 0;
+        margin: 10px 0;
+    }
+
+}
